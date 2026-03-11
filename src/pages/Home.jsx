@@ -39,7 +39,7 @@ export default function Home() {
               <div className="hero-avatar-placeholder">
                 <img
                   src="/avatar-don-Carlos.jfif" 
-                  alt="Carlos Pérez"
+                  alt="Carlos Perez"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
