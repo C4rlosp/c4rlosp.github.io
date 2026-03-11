@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "talks": "Charlas",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Carlos Perez",
+    "title": "Ingeniero en Redes",
+    "subtitle": "Especialista en infraestructura y seguridad de enrutamiento.",
+    "cta_projects": "Ver Proyectos",
+    "cta_article": "Leer mi Artículo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "Soy un Ingeniero en Redes apasionado por la seguridad del ecosistema de Internet y la interconexión regional.",
+    "bio2": "Actualmente enfocado en la operación de IXPs y la implementación de mejores prácticas de enrutamiento.",
+    "skills_title": "Habilidades Técnicas"
+  },
+  "achievements": {
+    "title": "Logros y Certificaciones",
+    "items": [
+      {
+        "icon": "network_node",
+        "title": "Logro Ejemplo 1",
+        "description": "Descripcion de un hito importante en tu carrera."
+      },
+      {
+        "icon": "verified_user",
+        "title": "Certificacion Ejemplo",
+        "description": "Detalle de certificacion tecnica o reconocimiento."
+      },
+      {
+        "icon": "public",
+        "title": "Impacto Regional",
+        "description": "Contribuciones a la infraestructura critica de Internet."
+      }
+    ]
+  },
+  "article": {
+    "label": "Artículo Publicado",
+    "title": "RPKI Ghost: el riesgo invisible en la validación de rutas",
+    "description": "Por Carlos Pérez / NIC - CRIX Costa Rica",
+    "cta": "Leer Artículo Completo →"
+  },
+  "articleDetail": {
+    "back": "Volver al inicio",
+    "label": "Seguridad RPKI",
+    "author": "Por Carlos Pérez / NIC - CRIX Costa Rica",
+    "date": "Marzo 2026",
+    "title_part1": "RPKI Ghost: ",
+    "title_part2": "el riesgo invisible en la validación de rutas",
+    "content": {
+      "p1": "Hoy en día, en un entorno donde la IA y los manuales de buenas prácticas están por todas partes, incluso siguiendo las normas de la comunidad podemos caer en una trampa peligrosa: asumir que la seguridad de RPKI simplemente funciona.",
+      "p2": "A esto se suma la mentalidad clásica de 'si funciona, no lo toques', muy común entre operadores y administradores. Aunque parezca descabellado, es totalmente plausible que existan ISP —e incluso IXPs— que creen estar protegidos simplemente porque su validador RPKI está encendido, sin errores aparentes y sin alertas visibles.",
+      "quote1": "Un validador desactualizado puede convertirse en un 'Ghost': parece que funciona, pero realmente no valida.",
+      "p3": "Muchos operadores configuraron sus validadores hace años, cuando RSYNC (RFC 9286) era el método principal de sincronización. Pero desde entonces los RIR han avanzado hacia RRDP (RFC 8210), un mecanismo basado en HTTPS mucho más rápido, eficiente y menos costoso para los repositorios.",
+      "p_sub": "¿Qué pasaría si tu validador dejó de validar hace años… pero nunca te diste cuenta porque la sesión RTR seguía 'Established'?",
+      "ghost_def": "Ese es el corazón de Ghost RPKI: Un validador aparentemente sano, pero con la validación rota y sin síntomas visibles.",
+      "h3_1": "Comparación real: FORT v1.0 vs FORT v1.6",
+      "p4": "A continuación se ilustran diferencias enormes en la cantidad de ROAs importados y preferidos entre un validador antiguo y uno actualizado.",
+      "h4_1": "Tablas de BIRD (estado real de los validadores)",
+      "fig1": "Figura 1 – Salida real de BIRD mostrando diferencias entre validadores antiguos y actualizados.",
+      "h4_2": "Comparación de ROAs importados",
+      "fig2": "Figura 2 – Comparación del número de ROAs importados por FORT v1.0 y v1.6 (IPv4 e IPv6).",
+      "fig2_cap": "La versión antigua pierde una gran cantidad de datos debido a soporte incompleto de RRDP.",
+      "h4_3": "ROAs importados vs preferidos (comparación completa)",
+      "fig3": "Figura 3 – Comparación entre ROAs importados y ROAs preferidos. FORT v1.0 muestra inconsistencias fuertes que revelan validación degradada (Ghost RPKI).",
+      "h3_2": "Por qué ocurre esto?",
+      "list": [
+        "No interpretar correctamente RRDP",
+        "Duplicar o procesar mal objetos",
+        "Mantener estados inconsistentes por depender solo de RSYNC",
+        "No reconocer objetos introducidos después de 2021",
+        "Crear una falsa sensación de seguridad (Ghost Security)"
+      ],
+      "conclusion_h": "Conclusión",
+      "conclusion_p": "En palabras simples, 'Ghost RPKI' es un validador que parece funcionar, pero en realidad está protegiendo con datos incompletos, corruptos o antiguos. La falsa seguridad es peor que no tener RPKI. El verdadero fantasma es pensar que estás protegido cuando no lo estás.",
+      "recommendations_h": "Recomendaciones finales",
+      "recommendations": [
+        "No confíes en que 'no da errores'",
+        "No confíes en 'siempre ha funcionado así'",
+        "RPKI no es un servicio de 'instalar y olvidar'",
+        "Mantén actualizado tu validador, tus TAL y tus repositorios"
+      ],
+      "final_quote": "El mayor riesgo no es no tener RPKI: es creer que lo tienes, cuando en realidad tu validador es un fantasma."
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de los proyectos en los que he trabajado. Todos disponibles en GitHub.",
+    "view_github": "Ver en GitHub →",
+    "view_all": "Ver todos en GitHub",
+    "items": [
+      {
+        "title": "zabbix-bgp-monitoring-bird",
+        "description": "Monitoreo BGP automatizado en routers BIRD (IXP – NIC CR) usando Zabbix Agent, scripts y LLD (IPv4/IPv6).",
+        "tags": ["IXP", "BGP", "ZABBIX"],
+        "repo": "https://github.com/C4rlosp/zabbix-bgp-monitoring-bird"
+      },
+      {
+        "title": "zabbix-bgp-ipv4-ipv6-monitoring",
+        "description": "Template de Zabbix para monitorear sesiones BGP IPv4/IPv6 en routers Cisco mediante SNMPv2.",
+        "tags": ["BGP", "CISCO", "SNMP"],
+        "repo": "https://github.com/C4rlosp/zabbix-bgp-ipv4-ipv6-monitoring"
+      },
+      {
+        "title": "nettools-pro",
+        "description": "Colección de herramientas y contenedores Docker desarrollados para pruebas, validación y automatización de red (CRIXTools).",
+        "tags": ["Docker", "Tools", "Testing"],
+        "repo": "https://github.com/C4rlosp/nettools-pro"
+      }
+    ]
+  },
+  "talks": {
+    "title": "Charlas & Presentaciones",
+    "subtitle": "Participaciones en conferencias, meetups y eventos académicos.",
+    "Publicacion": "Ver Publicación",
+    "video": "Ver Video",
+    "items": [
+      {
+        "year": "2025-12",
+        "title": "Lightning Talk: Building Trust and Local Value – The CRIX Experience",
+        "event": "Euro-IX 43",
+        "location": "Madrid, España",
+        "description": "Lightning Talk presentada en Euro-IX 43 (Madrid), donde compartí la experiencia del Costa Rica Internet Exchange (CRIX) en la construcción de confianza, fortalecimiento del ecosistema local y generación de valor regional.",
+        "images": ["/euroix43.jpg"],
+        "Publicacion": "https://www.euro-ix.net/en/events/fora/43rd-euro-ix-forum/",
+        "video": ""
+      },
+      {
+        "year": "2025-09",
+        "title": "Participación en sesiones técnicas de enrutamiento y operación de IXPs",
+        "event": "LACNIC 44 LAC-IX Technical Meeting",
+        "location": "San Salvador, El Salvador",
+        "description": "Participación representando a NIC Costa Rica y CRIX en sesiones técnicas de BGP, RPKI y operación de IXPs. Compartí experiencias en la implementación de soluciones de monitoreo y seguridad.",
+        "images": ["/lacnic.jpg"],
+        "Publicacion": "https://nic.cr/2025/10/31/nic-costa-rica-comparte-la-experiencia-del-crix-en-lacnic-44-y-lac-ix-technical-meeting/"
+      },
+      {
+        "year": "2025-05",
+        "title": "Participación en sesiones técnicas de enrutamiento en LACNIC 43",
+        "event": "LACNIC 43",
+        "location": "Sao Paulo, Brasil",
+        "description": "Representación de NIC Costa Rica y CRIX en discusiones técnicas sobre BGP, RPKI, despliegue de IXPs y fortalecimiento de la infraestructura regional.",
+        "images": ["/lacnic43.jpeg"],
+        "Publicacion": "https://nic.cr/2025/05/29/lacnic-43-y-el-peering-forum-reflexiones-sobre-tendencias-y-desafios-clave-para-el-ecosistema-de-internet-en-la-region/"
+      },
+      {
+        "year": "2025-04-30",
+        "title": "Charla sobre seguridad global en redes en Texas Tech University",
+        "event": "Texas Tech University",
+        "location": "San Jose, Costa Rica",
+        "description": "Presentación sobre amenazas globales en infraestructura de Internet, seguridad en BGP, validación RPKI y resiliencia operativa para redes críticas.",
+        "images": ["/texastech.jpg"]
+      },
+      {
+        "year": "2024-10",
+        "title": "Moderador en el Foro de Gobernanza de Internet",
+        "event": "IGF 2024",
+        "location": "San Jose, Costa Rica",
+        "description": "Moderador de panel enfocado en conectividad, seguridad de enrutamiento y fortalecimiento de la infraestructura crítica de Internet a nivel regional.",
+        "images": ["/igfsep2024.jpg"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hablemos!",
+    "subtitle": "Estoy abierto a colaboraciones, charlas y nuevas oportunidades.",
+    "email": "carlos@carlosperez.cr",
+    "github": "https://github.com/C4rlosp",
+    "linkedin": "https://www.linkedin.com/in/carlos-ernesto-pérez-pérez-442900123",
+    "form_name": "Nombre",
+    "form_email": "Correo electrónico",
+    "form_message": "Mensaje",
+    "send_btn": "Enviar Mensaje",
+    "success_message": "¡Mensaje enviado exitosamente!"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  },
+  "skills": ["Habilidad 1", "Habilidad 2", "Herramienta 3", "Especialidad 4"]
+}
