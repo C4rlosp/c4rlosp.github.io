@@ -120,17 +120,6 @@
     "Publicacion": "Ver Publicación",
     "video": "Ver Video",
     "items": [
- {
-        "year": "2026",
-        "title": "Lightning Talk: Building Trust and Local Value – The CRIX Experience",
-        "event": "Euro-IX 43",
-        "location": "Madrid, España",
-        "description": "Lightning Talk presentada en Euro-IX 43 (Madrid), donde compartí la experiencia del Costa Rica Internet Exchange (CRIX) en la construcción de confianza, fortalecimiento del ecosistema local y generación de valor regional.",
-        "images": ["/euroix43.jpg"],
-        "Publicacion": "https://www.euro-ix.net/en/events/fora/43rd-euro-ix-forum/",
-        "video": ""
-      },
-
 
       {
         "year": "2025-12",
