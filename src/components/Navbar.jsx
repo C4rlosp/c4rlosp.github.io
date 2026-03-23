@@ -26,6 +26,7 @@ export default function Navbar() {
     { to: '/', label: t('nav.home') },
     { to: '/projects', label: t('nav.projects') },
     { to: '/talks', label: t('nav.talks') },
+    { to: '/articles', label: t('nav.articles') },
     { to: '/contact', label: t('nav.contact') },
   ];
 

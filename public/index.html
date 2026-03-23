@@ -7,6 +7,22 @@
     <meta name="description" content="Portfolio - Ingeniero en Redes" />
     <link rel="icon" href="/favicon.svg" />
     <title>Carlos Perez | Network Engineer</title>
+    <script>
+      // GitHub Pages SPA fix - procesa el redirect del 404.html
+      (function() {
+        var redirect = window.location.search.slice(1);
+        if (redirect.startsWith('p=')) {
+          var params = {};
+          redirect.split('&').forEach(function(p) {
+            var kv = p.split('=');
+            params[kv[0]] = decodeURIComponent(kv[1] || '');
+          });
+          var path = params['p'] || '/';
+          var query = params['q'] ? '?' + params['q'] : '';
+          window.history.replaceState(null, null, path + query);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

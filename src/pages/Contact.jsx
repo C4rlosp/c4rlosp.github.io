@@ -1,6 +1,6 @@
 import { useState } from 'react'; 
 import { useTranslation } from 'react-i18next';
-import { FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaPaperPlane, FaYoutube } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 import { db } from '../firebase';
@@ -19,9 +19,15 @@ export default function Contact() {
     },
     {
       name: 'LinkedIn',
-      handle: "",
+      handle: " Carlos Perez",
       url: t('contact.linkedin'),
       icon: <FaLinkedin />,
+    },
+     {
+      name: 'Youtube',
+      handle: "CarlosPerezP",
+      url: t('contact.youtube'),
+      icon: <FaYoutube />,
     },
   ];
 
