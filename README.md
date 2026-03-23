@@ -182,12 +182,3 @@ npm run deploy
 `npm run deploy` construye el sitio y lo publica en `https://c4rlosp.github.io`. Tarda un par de minutos en verse reflejado.
 
 ---
-
-## Clonar el repo en una máquina nueva
-
-```bash
-git clone https://github.com/C4rlosp/c4rlosp.github.io.git
-cd c4rlosp.github.io
-npm install
-npm start
-```
