@@ -1,10 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { FaNetworkWired, FaShieldAlt, FaCertificate } from 'react-icons/fa';
 
 export default function Home() {
   const { t } = useTranslation();
   const achievements = t('achievements.items', { returnObjects: true });
   const skills = t('skills', { returnObjects: true });
+  const iconMap = {
+    lan: <FaNetworkWired />,
+    shield: <FaShieldAlt />,
+    workspace_premium: <FaCertificate />
+  };
 
   return (
     <main>
@@ -86,7 +92,7 @@ export default function Home() {
             {Array.isArray(achievements) &&
               achievements.map((item, i) => (
                 <div className="achievement-card" key={i}>
-                  <div className="achievement-icon">{item.icon}</div>
+                  <div className="achievement-icon">{iconMap[item.icon] || null}</div>
                   <h3 className="achievement-title">{item.title}</h3>
                   <p className="achievement-desc">{item.description}</p>
                 </div>

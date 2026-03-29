@@ -24,19 +24,19 @@
     "title": "Logros y Certificaciones",
     "items": [
       {
-        "icon": "network_node",
-        "title": "Logro Ejemplo 1",
-        "description": "Descripcion de un hito importante en tu carrera."
+        "icon": "lan",
+        "title": "Liderazgo en IXP",
+        "description": "Participación en la operación, fortalecimiento y crecimiento del Costa Rica Internet Exchange (CRIX)."
       },
       {
-        "icon": "verified_user",
-        "title": "Certificacion Ejemplo",
-        "description": "Detalle de certificacion tecnica o reconocimiento."
+        "icon": "shield",
+        "title": "Routing y Seguridad",
+        "description": "Trabajo en buenas prácticas de enrutamiento, validación RPKI, interconexión y resiliencia operativa."
       },
       {
-        "icon": "public",
-        "title": "Impacto Regional",
-        "description": "Contribuciones a la infraestructura critica de Internet."
+        "icon": "workspace_premium",
+        "title": "Certificaciones",
+        "description": "CCNP, JNCIA y JNCIA-SEC como base de especialización técnica en redes y sistemas."
       }
     ]
   },
@@ -46,7 +46,6 @@
     "description": "Por Carlos Pérez / NIC - CRIX Costa Rica",
     "cta": "Leer Artículo Completo →"
   },
-
 
   "articleDetail": {
     "back": "← Volver",

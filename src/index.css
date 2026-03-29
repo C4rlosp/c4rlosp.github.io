@@ -509,6 +509,7 @@ body::after {
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
+  align-items: flex-start;
 }
 
 .achievement-card::before {

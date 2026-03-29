@@ -24,19 +24,19 @@
     "title": "Achievements and Certifications",
     "items": [
       {
-        "icon": "network_node",
-        "title": "Achievement Example 1",
-        "description": "Description of an important milestone in your career."
+        "icon": "lan",
+        "title": "IXP Leadership",
+        "description": "Involvement in the operation, strengthening, and growth of the Costa Rica Internet Exchange (CRIX)."
       },
       {
-        "icon": "verified_user",
-        "title": "Certification Example",
-        "description": "Details of technical certification or recognition."
+        "icon": "shield",
+        "title": "Routing & Security",
+        "description": "Work on routing best practices, RPKI validation, interconnection, and operational resilience."
       },
       {
-        "icon": "public",
-        "title": "Regional Impact",
-        "description": "Contributions to critical Internet infrastructure."
+        "icon": "workspace_premium",
+        "title": "Certifications",
+        "description": "CCNP, JNCIA, and JNCIA-SEC as part of a strong technical foundation in networking and systems."
       }
     ]
   },
