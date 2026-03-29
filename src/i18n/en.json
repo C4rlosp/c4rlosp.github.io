@@ -249,10 +249,10 @@
   },
   "footer": {
     "rights": "All rights reserved",
-    "follow": "Follow me on social media"
+    "follow": "Connect"
   },
   "skills": ["Skill 1", "Skill 2", "Tool 3", "Specialty 4"],
   "articles": {
   "subtitle": "Research and publications on networking, security, and Internet protocols."
-}
+  }
 }
