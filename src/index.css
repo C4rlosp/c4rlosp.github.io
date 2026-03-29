@@ -484,14 +484,22 @@ body::after {
   border: 1px solid var(--border);
   color: var(--text-muted);
   background: var(--bg-card);
-  transition: all var(--transition);
   letter-spacing: 0.05em;
+  opacity: 0.9;
+
+  transition: border-color var(--transition),
+              color var(--transition),
+              background var(--transition),
+              opacity var(--transition),
+              transform var(--transition);
 }
 
 .skill-tag:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-dim);
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 /* Achievements */

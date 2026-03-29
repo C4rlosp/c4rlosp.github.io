@@ -16,9 +16,9 @@
   },
   "about": {
     "title": "Sobre mí",
-    "bio": "Soy un Ingeniero en Redes apasionado por la seguridad del ecosistema de Internet y la interconexión regional.",
-    "bio2": "Actualmente enfocado en la operación de IXPs y la implementación de mejores prácticas de enrutamiento.",
-    "skills_title": "Habilidades Técnicas"
+    "bio": "Soy un Ingeniero en Redes enfocado en la operación, evolución y resiliencia de infraestructura crítica de Internet, con experiencia en IXPs, interconexión y seguridad de enrutamiento.",
+    "bio2": "Actualmente participo en la operación del Costa Rica Internet Exchange (CRIX), contribuyendo al fortalecimiento del ecosistema local mediante la implementación de buenas prácticas en BGP, RPKI y estrategias de interconexión.",
+    "skills_title": "Áreas de Especialización"
   },
   "achievements": {
     "title": "Logros y Certificaciones",
@@ -276,11 +276,13 @@
     "follow": "Conecta"
   },
   "skills": [
-    "Habilidad 1",
-    "Habilidad 2",
-    "Herramienta 3",
-    "Especialidad 4"
-  ],
+  "Operación de IXP",
+  "Estrategia de Interconexión",
+  "BGP y Políticas de Enrutamiento",
+  "RPKI y Seguridad de Rutas",
+  "Operación de Centros de Datos",
+  "Automatización de Redes"
+],
   "articles": {
     "subtitle": "Investigaciones y publicaciones sobre redes, seguridad y protocolos de internet."
   }

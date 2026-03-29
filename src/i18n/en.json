@@ -16,9 +16,9 @@
   },
   "about": {
     "title": "About me",
-    "bio": "I am a Network Engineer passionate about the security of the Internet ecosystem and regional interconnection.",
-    "bio2": "Currently focused on IXP operation and the implementation of routing best practices.",
-    "skills_title": "Technical Skills"
+    "bio": "I am a Network Engineer focused on the operation, evolution, and resilience of critical Internet infrastructure, with experience in IXPs, interconnection, and routing security.",
+    "bio2": "I am currently involved in the operation of the Costa Rica Internet Exchange (CRIX), contributing to the strengthening of the local ecosystem through best practices in BGP, RPKI, and interconnection strategy.",
+    "skills_title": "Core Expertise"
   },
   "achievements": {
     "title": "Achievements and Certifications",
@@ -251,7 +251,14 @@
     "rights": "All rights reserved",
     "follow": "Connect"
   },
-  "skills": ["Skill 1", "Skill 2", "Tool 3", "Specialty 4"],
+  "skills": [
+  "IXP Operations",
+  "Interconnection Strategy",
+  "BGP & Routing Policy",
+  "RPKI & Routing Security",
+  "Data Center Operations",
+  "Network Automation"
+],
   "articles": {
   "subtitle": "Research and publications on networking, security, and Internet protocols."
   }
