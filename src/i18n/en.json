@@ -3,7 +3,8 @@
     "home": "Home",
     "projects": "Projects",
     "talks": "Talks",
-    "contact": "Contact"
+    "contact": "Contact",
+    "article": "Articles"
   },
   "hero": {
     "greeting": "Hi, I am",
@@ -46,48 +47,115 @@
     "cta": "Read Full Article →"
   },
   "articleDetail": {
-    "back": "Back to home",
-    "label": "RPKI Security",
-    "author": "By Carlos Pérez / NIC - CRIX Costa Rica",
-    "date": "March 2026",
-    "title_part1": "RPKI Ghost: ",
-    "title_part2": "the invisible risk in route validation",
-    "content": {
-      "p1": "Nowadays, in an environment where AI and best practice manuals are everywhere, even following community standards can lead us into a dangerous trap: assuming that RPKI security just works.",
-      "p2": "Added to this is the classic 'if it works, don't touch it' mentality, very common among operators and administrators. Although it may seem far-fetched, it is entirely plausible that ISPs —and even IXPs— believe they are protected simply because their RPKI validator is on, with no apparent errors and no visible alerts.",
-      "quote1": "An outdated validator can become a 'Ghost': it looks like it's working, but it's not actually validating.",
-      "p3": "Many operators configured their validators years ago, when RSYNC (RFC 9286) was the main synchronization method. However, RIRs have since moved towards RRDP (RFC 8210), an HTTPS-based mechanism that is much faster, more efficient, and less costly for repositories.",
-      "p_sub": "What if your validator stopped validating years ago... but you never noticed because the RTR session remained 'Established'?",
-      "ghost_def": "That is the heart of Ghost RPKI: An apparently healthy validator, but with broken validation and no visible symptoms.",
-      "h3_1": "Real Comparison: FORT v1.0 vs FORT v1.6",
-      "p4": "The following illustrates massive differences in the number of imported and preferred ROAs between an old validator and an updated one.",
-      "h4_1": "BIRD Tables (Real state of validators)",
-      "fig1": "Figure 1 – Real BIRD output showing differences between old and updated validators.",
-      "h4_2": "Comparison of Imported ROAs",
-      "fig2": "Figure 2 – Comparison of the number of ROAs imported by FORT v1.0 and v1.6 (IPv4 and IPv6).",
-      "fig2_cap": "The old version loses a large amount of data due to incomplete RRDP support.",
-      "h4_3": "Imported vs Preferred ROAs (Full comparison)",
-      "fig3": "Figure 3 – Comparison between imported ROAs and preferred ROAs. FORT v1.0 shows strong inconsistencies revealing degraded validation (Ghost RPKI).",
-      "h3_2": "Why does this happen?",
-      "list": [
+  "back": "← Back to Articles",
+  "label": "RPKI Security",
+  "author": "By Carlos Pérez / NIC - CRIX Costa Rica",
+  "date": "March 2026",
+  "title_part1": "RPKI Ghost: ",
+  "title_part2": "the invisible risk in route validation",
+  "content": [
+    {
+      "type": "lead",
+      "text": "Nowadays, in an environment where AI and best-practice manuals are everywhere, even following community standards can lead us into a dangerous trap: assuming that RPKI security simply works."
+    },
+    {
+      "type": "p",
+      "text": "Added to this is the classic 'if it works, don't touch it' mentality, very common among operators and administrators. Although it may seem far-fetched, it is entirely plausible that ISPs — and even IXPs — believe they are protected simply because their RPKI validator is running, with no apparent errors and no visible alerts."
+    },
+    {
+      "type": "quote",
+      "text": "An outdated validator can become a 'Ghost': it looks like it's working, but it is not actually validating."
+    },
+    {
+      "type": "p",
+      "text": "Many operators configured their validators years ago, when RSYNC (RFC 9286) was the main synchronization method. However, RIRs have since moved toward RRDP (RFC 8210), an HTTPS-based mechanism that is much faster, more efficient, and less costly for repositories."
+    },
+    {
+      "type": "p_italic",
+      "text": "What if your validator stopped validating years ago… but you never noticed because the RTR session remained 'Established'?"
+    },
+    {
+      "type": "p_bold",
+      "text": "That is the heart of Ghost RPKI: a validator that appears healthy, but whose validation is broken and shows no visible symptoms."
+    },
+    {
+      "type": "h2",
+      "text": "Real comparison: FORT v1.0 vs FORT v1.6"
+    },
+    {
+      "type": "p",
+      "text": "The following illustrates major differences in the number of imported and preferred ROAs between an old validator and an updated one."
+    },
+    {
+      "type": "h4",
+      "text": "BIRD tables (real state of the validators)"
+    },
+    {
+      "type": "image",
+      "src": "/rpki_tables.png",
+      "alt": "BIRD Tables",
+      "caption": "Figure 1 – Real BIRD output showing differences between old and updated validators.",
+      "terminal": true
+    },
+    {
+      "type": "h4",
+      "text": "Comparison of imported ROAs"
+    },
+    {
+      "type": "image",
+      "src": "/rpki_roa_imported_only.png",
+      "alt": "Imported ROAs",
+      "caption": "Figure 2 – Comparison of the number of ROAs imported by FORT v1.0 and v1.6 (IPv4 and IPv6).",
+      "subcaption": "The older version loses a large amount of data due to incomplete RRDP support."
+    },
+    {
+      "type": "h4",
+      "text": "Imported vs preferred ROAs (full comparison)"
+    },
+    {
+      "type": "image",
+      "src": "/rpki_roa_comparison.png",
+      "alt": "Imported vs Preferred",
+      "caption": "Figure 3 – Comparison between imported ROAs and preferred ROAs. FORT v1.0 shows major inconsistencies that reveal degraded validation (Ghost RPKI)."
+    },
+    {
+      "type": "h3",
+      "text": "Why does this happen?"
+    },
+    {
+      "type": "list",
+      "items": [
         "Failure to correctly interpret RRDP",
-        "Duplication or incorrect processing of objects",
-        "Maintaining inconsistent states by relying only on RSYNC",
+        "Duplicating or incorrectly processing objects",
+        "Maintaining inconsistent states by depending only on RSYNC",
         "Failure to recognize objects introduced after 2021",
         "Creating a false sense of security (Ghost Security)"
-      ],
-      "conclusion_h": "Conclusion",
-      "conclusion_p": "In simple terms, 'Ghost RPKI' is a validator that seems to work but is actually protecting with incomplete, corrupt, or old data. False security is worse than having no RPKI. The true ghost is thinking you are protected when you are not.",
-      "recommendations_h": "Final Recommendations",
-      "recommendations": [
-        "Don't trust that 'it shows no errors'",
-        "Don't trust 'it has always worked this way'",
+      ]
+    },
+    {
+      "type": "conclusion",
+      "title": "Conclusion",
+      "text": "In simple terms, 'Ghost RPKI' is a validator that appears to work, but is actually protecting with incomplete, corrupt, or outdated data. False security is worse than having no RPKI at all. The real ghost is thinking you are protected when you are not."
+    },
+    {
+      "type": "h3",
+      "text": "Final recommendations"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Do not trust that 'it shows no errors'",
+        "Do not trust that 'it has always worked this way'",
         "RPKI is not an 'install and forget' service",
         "Keep your validator, TALs, and repositories updated"
-      ],
-      "final_quote": "The biggest risk is not having no RPKI: it is believing you have it, when in reality your validator is a ghost."
+      ]
+    },
+    {
+      "type": "final_quote",
+      "text": "The greatest risk is not having no RPKI: it is believing you have it, when in reality your validator is a ghost."
     }
-  },
+  ]
+},
   "projects": {
     "title": "Projects",
     "subtitle": "Some of the projects I have worked on. All available on GitHub.",
