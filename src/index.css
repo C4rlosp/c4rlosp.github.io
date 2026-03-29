@@ -526,7 +526,7 @@ body::after {
 }
 
 .achievement-card:hover {
-  border-color: var(--border-bright);
+  border-color: var(--accent);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
