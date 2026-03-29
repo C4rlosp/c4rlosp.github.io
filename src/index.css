@@ -554,6 +554,7 @@ body::after {
 }
 
 /* Article card */
+
 .article-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -1510,6 +1511,26 @@ body::after {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.article-back {
+  margin-bottom: 24px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all var(--transition);
+}
+
+.back-link:hover {
+  color: var(--accent);
+  transform: translateX(-2px);
 }
 
 .article-compact-card:hover .article-compact-cta {
