@@ -3,16 +3,15 @@
     "home": "Home",
     "projects": "Projects",
     "talks": "Talks",
-    "contact": "Contact",
-    "articles": "Articles"
+    "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I am",
-    "name": "Carlos Perez",
+    "name": "Carlos Pérez",
     "title": "Network Engineer",
     "subtitle": "Specialist in infrastructure and routing security.",
     "cta_projects": "View Projects",
-    "cta_article": "Read my Articles"
+    "cta_article": "Read my Article"
   },
   "about": {
     "title": "About me",
@@ -47,114 +46,47 @@
     "cta": "Read Full Article →"
   },
   "articleDetail": {
-    "back": "← Back to Articles",
+    "back": "Back to home",
     "label": "RPKI Security",
     "author": "By Carlos Pérez / NIC - CRIX Costa Rica",
     "date": "March 2026",
     "title_part1": "RPKI Ghost: ",
     "title_part2": "the invisible risk in route validation",
-    "content": [
-      {
-        "type": "lead",
-        "text": "Today, in an environment where AI and best practice guides are everywhere, even following community standards can lead us into a dangerous trap: assuming that RPKI security simply works."
-      },
-      {
-        "type": "p",
-        "text": "Add to this the classic 'if it ain't broke, don't fix it' mentality, very common among operators and administrators. As far-fetched as it may seem, it is entirely plausible that ISPs — and even IXPs — believe they are protected simply because their RPKI validator is running, with no apparent errors and no visible alerts."
-      },
-      {
-        "type": "quote",
-        "text": "An outdated validator can become a 'Ghost': it looks like it works, but it doesn't actually validate."
-      },
-      {
-        "type": "p",
-        "text": "Many operators set up their validators years ago, when RSYNC (RFC 9286) was the primary synchronization method. But since then, RIRs have moved toward RRDP (RFC 8210), an HTTPS-based mechanism that is much faster, more efficient, and less costly for repositories."
-      },
-      {
-        "type": "p_italic",
-        "text": "What if your validator stopped validating years ago… but you never noticed because the RTR session remained 'Established'?"
-      },
-      {
-        "type": "p_bold",
-        "text": "That is the heart of Ghost RPKI: An apparently healthy validator, but with broken validation and no visible symptoms."
-      },
-      {
-        "type": "h2",
-        "text": "Real Comparison: FORT v1.0 vs FORT v1.6"
-      },
-      {
-        "type": "p",
-        "text": "The following illustrates enormous differences in the number of imported and preferred ROAs between an old and an updated validator."
-      },
-      {
-        "type": "h4",
-        "text": "BIRD Tables (real validator status)"
-      },
-      {
-        "type": "image",
-        "src": "/rpki_tables.png",
-        "alt": "BIRD Tables",
-        "caption": "Figure 1 – Real BIRD output showing differences between old and updated validators.",
-        "terminal": true
-      },
-      {
-        "type": "h4",
-        "text": "Comparison of Imported ROAs"
-      },
-      {
-        "type": "image",
-        "src": "/rpki_roa_imported_only.png",
-        "alt": "ROAs Imported",
-        "caption": "Figure 2 – Comparison of the number of ROAs imported by FORT v1.0 and v1.6 (IPv4 and IPv6).",
-        "subcaption": "The older version loses a large amount of data due to incomplete RRDP support."
-      },
-      {
-        "type": "h4",
-        "text": "Imported vs Preferred ROAs (full comparison)"
-      },
-      {
-        "type": "image",
-        "src": "/rpki_roa_comparison.png",
-        "alt": "Imported vs Preferred",
-        "caption": "Figure 3 – Comparison between imported and preferred ROAs. FORT v1.0 shows strong inconsistencies revealing degraded validation (Ghost RPKI)."
-      },
-      {
-        "type": "h3",
-        "text": "Why does this happen?"
-      },
-      {
-        "type": "list",
-        "items": [
-          "Failing to correctly interpret RRDP",
-          "Duplicating or misprocessing objects",
-          "Maintaining inconsistent states by relying only on RSYNC",
-          "Not recognizing objects introduced after 2021",
-          "Creating a false sense of security (Ghost Security)"
-        ]
-      },
-      {
-        "type": "conclusion",
-        "title": "Conclusion",
-        "text": "In simple terms, 'Ghost RPKI' is a validator that appears to work, but is actually protecting with incomplete, corrupt, or outdated data. False security is worse than having no RPKI at all. The real ghost is thinking you are protected when you are not."
-      },
-      {
-        "type": "h3",
-        "text": "Final Recommendations"
-      },
-      {
-        "type": "list",
-        "items": [
-          "Don't trust 'no errors showing'",
-          "Don't trust 'it has always worked this way'",
-          "RPKI is not a 'set it and forget it' service",
-          "Keep your validator, TALs, and repositories up to date"
-        ]
-      },
-      {
-        "type": "final_quote",
-        "text": "The greatest risk is not lacking RPKI: it's believing you have it, when in reality your validator is a ghost."
-      }
-    ]
+    "content": {
+      "p1": "Nowadays, in an environment where AI and best practice manuals are everywhere, even following community standards can lead us into a dangerous trap: assuming that RPKI security just works.",
+      "p2": "Added to this is the classic 'if it works, don't touch it' mentality, very common among operators and administrators. Although it may seem far-fetched, it is entirely plausible that ISPs —and even IXPs— believe they are protected simply because their RPKI validator is on, with no apparent errors and no visible alerts.",
+      "quote1": "An outdated validator can become a 'Ghost': it looks like it's working, but it's not actually validating.",
+      "p3": "Many operators configured their validators years ago, when RSYNC (RFC 9286) was the main synchronization method. However, RIRs have since moved towards RRDP (RFC 8210), an HTTPS-based mechanism that is much faster, more efficient, and less costly for repositories.",
+      "p_sub": "What if your validator stopped validating years ago... but you never noticed because the RTR session remained 'Established'?",
+      "ghost_def": "That is the heart of Ghost RPKI: An apparently healthy validator, but with broken validation and no visible symptoms.",
+      "h3_1": "Real Comparison: FORT v1.0 vs FORT v1.6",
+      "p4": "The following illustrates massive differences in the number of imported and preferred ROAs between an old validator and an updated one.",
+      "h4_1": "BIRD Tables (Real state of validators)",
+      "fig1": "Figure 1 – Real BIRD output showing differences between old and updated validators.",
+      "h4_2": "Comparison of Imported ROAs",
+      "fig2": "Figure 2 – Comparison of the number of ROAs imported by FORT v1.0 and v1.6 (IPv4 and IPv6).",
+      "fig2_cap": "The old version loses a large amount of data due to incomplete RRDP support.",
+      "h4_3": "Imported vs Preferred ROAs (Full comparison)",
+      "fig3": "Figure 3 – Comparison between imported ROAs and preferred ROAs. FORT v1.0 shows strong inconsistencies revealing degraded validation (Ghost RPKI).",
+      "h3_2": "Why does this happen?",
+      "list": [
+        "Failure to correctly interpret RRDP",
+        "Duplication or incorrect processing of objects",
+        "Maintaining inconsistent states by relying only on RSYNC",
+        "Failure to recognize objects introduced after 2021",
+        "Creating a false sense of security (Ghost Security)"
+      ],
+      "conclusion_h": "Conclusion",
+      "conclusion_p": "In simple terms, 'Ghost RPKI' is a validator that seems to work but is actually protecting with incomplete, corrupt, or old data. False security is worse than having no RPKI. The true ghost is thinking you are protected when you are not.",
+      "recommendations_h": "Final Recommendations",
+      "recommendations": [
+        "Don't trust that 'it shows no errors'",
+        "Don't trust 'it has always worked this way'",
+        "RPKI is not an 'install and forget' service",
+        "Keep your validator, TALs, and repositories updated"
+      ],
+      "final_quote": "The biggest risk is not having no RPKI: it is believing you have it, when in reality your validator is a ghost."
+    }
   },
   "projects": {
     "title": "Projects",
@@ -165,31 +97,19 @@
       {
         "title": "zabbix-bgp-monitoring-bird",
         "description": "Automated BGP monitoring on BIRD routers (IXP – NIC CR) using Zabbix Agent, scripts, and LLD (IPv4/IPv6).",
-        "tags": [
-          "IXP",
-          "BGP",
-          "ZABBIX"
-        ],
+        "tags": ["IXP", "BGP", "ZABBIX"],
         "repo": "https://github.com/C4rlosp/zabbix-bgp-monitoring-bird"
       },
       {
         "title": "zabbix-bgp-ipv4-ipv6-monitoring",
         "description": "Zabbix template to monitor BGP IPv4/IPv6 sessions on Cisco routers via SNMPv2.",
-        "tags": [
-          "BGP",
-          "CISCO",
-          "SNMP"
-        ],
+        "tags": ["BGP", "CISCO", "SNMP"],
         "repo": "https://github.com/C4rlosp/zabbix-bgp-ipv4-ipv6-monitoring"
       },
       {
         "title": "nettools-pro",
         "description": "Collection of tools and Docker containers developed for network testing, validation, and automation (CRIXTools).",
-        "tags": [
-          "Docker",
-          "Tools",
-          "Testing"
-        ],
+        "tags": ["Docker", "Tools", "Testing"],
         "repo": "https://github.com/C4rlosp/nettools-pro"
       }
     ]
@@ -206,9 +126,7 @@
         "event": "Euro-IX 43",
         "location": "Madrid, Spain",
         "description": "Lightning Talk presented at Euro-IX 43 (Madrid), where I shared the experience of the Costa Rica Internet Exchange (CRIX) in building trust, strengthening the local ecosystem, and generating regional value.",
-        "images": [
-          "/euroix43.jpg"
-        ],
+        "images": ["/euroix43.jpg"],
         "Publicacion": "https://www.euro-ix.net/en/events/fora/43rd-euro-ix-forum/",
         "video": ""
       },
@@ -218,9 +136,7 @@
         "event": "LACNIC 44 LAC-IX Technical Meeting",
         "location": "San Salvador, El Salvador",
         "description": "Participated representing NIC Costa Rica and CRIX in technical sessions on BGP, RPKI, and IXP operation. Shared experiences in the implementation of monitoring and security solutions.",
-        "images": [
-          "/lacnic.jpg"
-        ],
+        "images": ["/lacnic.jpg"],
         "Publicacion": "https://nic.cr/2025/10/31/nic-costa-rica-comparte-la-experiencia-del-crix-en-lacnic-44-y-lac-ix-technical-meeting/"
       },
       {
@@ -229,9 +145,7 @@
         "event": "LACNIC 43",
         "location": "Sao Paulo, Brazil",
         "description": "Represented NIC Costa Rica and CRIX in technical discussions regarding BGP, RPKI, IXP deployment, and strengthening regional infrastructure.",
-        "images": [
-          "/lacnic43.jpeg"
-        ],
+        "images": ["/lacnic43.jpeg"],
         "Publicacion": "https://nic.cr/2025/05/29/lacnic-43-y-el-peering-forum-reflexiones-sobre-tendencias-y-desafios-clave-para-el-ecosistema-de-internet-en-la-region/"
       },
       {
@@ -240,9 +154,7 @@
         "event": "Texas Tech University",
         "location": "San Jose, Costa Rica",
         "description": "Presentation on global threats in Internet infrastructure, BGP security, RPKI validation, and operational resilience for critical networks.",
-        "images": [
-          "/texastech.jpg"
-        ]
+        "images": ["/texastech.jpg"]
       },
       {
         "year": "2024-10",
@@ -250,9 +162,7 @@
         "event": "IGF 2024",
         "location": "San Jose, Costa Rica",
         "description": "Moderator of a panel focused on connectivity, routing security, and strengthening critical Internet infrastructure at a regional level.",
-        "images": [
-          "/igfsep2024.jpg"
-        ]
+        "images": ["/igfsep2024.jpg"]
       }
     ]
   },
@@ -262,24 +172,14 @@
     "email": "carlos@carlosperez.cr",
     "github": "https://github.com/C4rlosp",
     "linkedin": "https://www.linkedin.com/in/carlos-ernesto-pérez-pérez-442900123",
-    "youtube": "https://www.youtube.com/@CarlosPerezP",
     "form_name": "Name",
     "form_email": "Email",
     "form_message": "Message",
     "send_btn": "Send Message",
-    "success_message": "Message sent successfully!",
-    "twitter": ""
+    "success_message": "Message sent successfully!"
   },
   "footer": {
     "rights": "All rights reserved"
   },
-  "skills": [
-    "Skill 1",
-    "Skill 2",
-    "Tool 3",
-    "Specialty 4"
-  ],
-  "articles": {
-    "subtitle": "Research and publications on networking, security and internet protocols."
-  }
+  "skills": ["Skill 1", "Skill 2", "Tool 3", "Specialty 4"]
 }
