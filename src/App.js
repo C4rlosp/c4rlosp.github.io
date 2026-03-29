@@ -14,30 +14,62 @@ import ArticleDetail from './pages/ArticleDetail';
 import Articles from './pages/Articles';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
-
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function DocumentLanguage() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language || 'es';
+  }, [i18n.language]);
+
   return null;
 }
 
 function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer-inner">
         <span>{t('hero.name')} © {year}</span>
         <div className="footer-social">
-          <span className="footer-social-label">Sígueme en mis redes sociales</span>
+          <span className="footer-social-label">{t('footer.follow')}</span>
           <div className="footer-social-icons">
-            <a href={t('contact.github')} target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+            <a
+              href={t('contact.github')}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              aria-label="GitHub"
+            >
               <FaGithub />
             </a>
-            <a href={t('contact.linkedin')} target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <a
+              href={t('contact.linkedin')}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              aria-label="LinkedIn"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://www.youtube.com/@CarlosPerezP" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+            <a
+              href={t('contact.youtube')}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="YouTube"
+              aria-label="YouTube"
+            >
               <FaYoutube />
             </a>
           </div>
@@ -50,8 +82,10 @@ function Footer() {
 export default function App() {
   return (
     <BrowserRouter>
+      <DocumentLanguage />
       <ScrollToTop />
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
@@ -60,6 +94,7 @@ export default function App() {
         <Route path="/articles" element={<Articles />} />
         <Route path="/article/rpki-ghost" element={<ArticleDetail />} />
       </Routes>
+
       <Footer />
 
       <ToastContainer
